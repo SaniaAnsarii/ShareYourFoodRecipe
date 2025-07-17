@@ -17,7 +17,9 @@ const MealDetailsPage = async ({ params }) => {
 		<>
 			<header className={styles.header}>
 				<div className={styles.image}>
-					<Image src={`${AWSS3PublicURL}${meal.image}`} alt={meal.title} fill />
+					{meal.image && (
+						<Image src={`${AWSS3PublicURL}${meal.image}`} alt={meal.title} fill />
+					)}
 				</div>
 				<div className={styles.headerText}>
 					<h1>{meal.title}</h1>

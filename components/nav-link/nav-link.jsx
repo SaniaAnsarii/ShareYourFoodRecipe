@@ -9,7 +9,9 @@ const NavLink = ({ href, children }) => {
 	return (
 		<Link
 			className={
-				path.startsWith(href) ? `${styles.link} ${styles.active}` : styles.link
+				typeof path === 'string' && typeof href === 'string' && path.startsWith(href)
+					? `${styles.link} ${styles.active}`
+					: styles.link
 			}
 			href={href}>
 			{children}

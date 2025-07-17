@@ -17,8 +17,8 @@ const MealDetailsPage = async ({ params }) => {
 		<>
 			<header className={styles.header}>
 				<div className={styles.image}>
-					{typeof meal.image === 'string' && meal.image &&
-					 typeof AWSS3PublicURL === 'string' && AWSS3PublicURL && (
+					{typeof meal?.image === 'string' && meal.image.trim().length > 0 &&
+					 typeof AWSS3PublicURL === 'string' && AWSS3PublicURL.trim().length > 0 && (
 						<Image src={`${AWSS3PublicURL}${meal.image}`} alt={meal.title} fill />
 					)}
 				</div>
